@@ -1,4 +1,8 @@
 import web
+import os.path
+
+if not os.path.isfile('recipes.db'):
+    raise ValueError('Recipes database (recipes.db) not found')
 
 urls = (
     '/(.*)', 'recipe'
